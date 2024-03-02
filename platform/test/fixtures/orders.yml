@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order_id: 1
+  status: 1
+  client: 1
+  comment: 1
+  employee: 1
+  urgency: 1
+  date_order: 2024-03-02 15:15:38
+  service: 1
+  price: 1.5
+
+two:
+  order_id: 1
+  status: 1
+  client: 1
+  comment: 1
+  employee: 1
+  urgency: 1
+  date_order: 2024-03-02 15:15:38
+  service: 1
+  price: 1.5

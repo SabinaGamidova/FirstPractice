@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_id: 1
+  species: 1
+  difficulty: 1
+
+two:
+  service_id: 1
+  species: 1
+  difficulty: 1

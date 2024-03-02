@@ -1,0 +1,27 @@
+<%= form_with(model: urgency) do |form| %>
+  <% if urgency.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(urgency.errors.count, "error") %> prohibited this urgency from being saved:</h2>
+
+      <ul>
+        <% urgency.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :urgency_id, style: "display: block" %>
+    <%= form.number_field :urgency_id %>
+  </div>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

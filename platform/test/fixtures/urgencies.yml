@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  urgency_id: 1
+  title: MyString
+
+two:
+  urgency_id: 1
+  title: MyString
