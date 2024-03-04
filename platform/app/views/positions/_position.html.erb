@@ -1,12 +1,9 @@
-<div id="<%= dom_id position %>">
-  <p>
-    <strong>Position:</strong>
-    <%= position.position_id %>
-  </p>
+<div class="mb-sm"> 
+  <%= position.title %>
+</div>
 
-  <p>
-    <strong>Title:</strong>
-    <%= position.title %>
-  </p>
-
+<div class="text-sm question-footer footer-contenter">
+  <div class="mr-sm"><%= link_to fa_icon('pencil'), edit_position_path(position), title: 'Edit position' %></div>
+  <div class="mr-sm"><%= link_to fa_icon('star'), position_path(position), title: 'Show this position' %></div>
+  <div class="mr-sm"><%= button_to fa_icon('trash-o'), position_path(position), method: :delete, title: 'Delete position'%></div>
 </div>

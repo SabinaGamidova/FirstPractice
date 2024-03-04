@@ -1,9 +1,5 @@
-<h1>New species</h1>
-
-<%= render "form", species: @species %>
-
-<br>
-
-<div>
-  <%= link_to "Back to species", species_index_path %>
+<div class="container">
+   <h1 class="title-lg mb">New species</h1>
+   <%= render "form", species: @species %>
+   <div class="mt"><%= link_to "Back to species", species_index_path, class: 'button button-main'  %></div>
 </div>

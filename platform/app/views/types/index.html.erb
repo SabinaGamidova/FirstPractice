@@ -1,14 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <p class="title-md mb"style="color: green"><%= notice %></p>
 
-<h1>Types</h1>
+  <h1 class="title-lg mb">All types</h1>
 
-<div id="types">
-  <% @types.each do |type| %>
-    <%= render type %>
-    <p>
-      <%= link_to "Show this type", type %>
-    </p>
+  <div id="types">
+    <% @types.each do |type| %>
+    <div class="mt-ls container">
+       <%= render type %>
+    </div>
   <% end %>
-</div>
 
-<%= link_to "New type", new_type_path %>
+  <div class="container mt-ls">
+    <%= link_to "New type", new_type_path, class: 'button button-main' %>
+  </div>
+</div>

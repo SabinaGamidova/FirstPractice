@@ -1,14 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <p class="title-md mb"style="color: green"><%= notice %></p>
 
-<h1>Comments</h1>
+  <h1 class="title-lg mb">All comments</h1>
 
-<div id="comments">
-  <% @comments.each do |comment| %>
-    <%= render comment %>
-    <p>
-      <%= link_to "Show this comment", comment %>
-    </p>
+  <div id="comments">
+    <% @comments.each do |comment| %>
+    <div class="mt-ls container">
+       <%= render comment %>
+    </div>
   <% end %>
-</div>
 
-<%= link_to "New comment", new_comment_path %>
+  <div class="container mt-ls">
+    <%= link_to "New comment", new_comment_path, class: 'button button-main' %>
+  </div>
+</div>

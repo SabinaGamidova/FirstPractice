@@ -1,32 +1,22 @@
-<%= form_with(model: service) do |form| %>
+<%= form_with model: service do |form| %>
+
   <% if service.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(service.errors.count, "error") %> prohibited this service from being saved:</h2>
+  <div style="color: red">
+    <h2><%= pluralize(service.errors.count, "error") %> prohibited this service from being saved:</h2>
 
-      <ul>
-        <% service.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :service_id, style: "display: block" %>
-    <%= form.number_field :service_id %>
-  </div>
-
-  <div>
-    <%= form.label :species, style: "display: block" %>
-    <%= form.number_field :species %>
-  </div>
-
-  <div>
-    <%= form.label :difficulty, style: "display: block" %>
-    <%= form.number_field :difficulty %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <ul>
+      <% service.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
   </div>
 <% end %>
+
+  <p><%= form.label :species %></p>
+  <p><%= form.number_field :species, class: 'form-text-field' %></p>
+
+  <p  class="mt"><%= form.label :difficulty %></p>
+  <p><%= form.number_field :difficulty, class: 'form-text-field' %></p>
+
+  <p class="mt"><%= form.submit "Save", class: 'button button-main' %></p> 
+<% end %> 

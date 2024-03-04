@@ -1,17 +1,17 @@
-<div id="<%= dom_id service %>">
-  <p>
-    <strong>Service:</strong>
-    <%= service.service_id %>
-  </p>
-
-  <p>
-    <strong>Species:</strong>
-    <%= service.species %>
-  </p>
-
-  <p>
-    <strong>Difficulty:</strong>
-    <%= service.difficulty %>
-  </p>
-
+<div class="mb-sm"> 
+  <%= service.species %>
 </div>
+
+<div class="text-sm question-footer">
+    <div class="text-grey"> 
+        <%= service.difficulty %>
+    </div>
+
+    <div class="footer-contenter"> 
+        <div class="mr-sm"><%= link_to fa_icon('pencil'), edit_service_path(service), title: 'Edit service' %></div>
+        <div class="mr-sm"><%= link_to fa_icon('star'), service_path(service), title: 'Show this service' %></div>
+        <div class="mr-sm"><%= button_to fa_icon('trash-o'), service_path(service), method: :delete, title: 'Delete service'%></div>
+    </div>
+</div>
+
+

@@ -1,14 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <p class="title-md mb"style="color: green"><%= notice %></p>
 
-<h1>Urgencies</h1>
+  <h1 class="title-lg mb">All urgencies</h1>
 
-<div id="urgencies">
-  <% @urgencies.each do |urgency| %>
-    <%= render urgency %>
-    <p>
-      <%= link_to "Show this urgency", urgency %>
-    </p>
+  <div id="urgencies">
+    <% @urgencies.each do |urgency| %>
+    <div class="mt-ls container">
+       <%= render urgency %>
+    </div>
   <% end %>
-</div>
 
-<%= link_to "New urgency", new_urgency_path %>
+  <div class="container mt-ls">
+    <%= link_to "New urgency", new_urgency_path, class: 'button button-main' %>
+  </div>
+</div>

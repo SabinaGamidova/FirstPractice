@@ -1,12 +1,10 @@
-<div id="<%= dom_id difficulty %>">
-  <p>
-    <strong>Difficulty:</strong>
-    <%= difficulty.difficulty_id %>
-  </p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= difficulty.title %>
-  </p>
-
+<div class="mb-sm"> 
+  <%= difficulty.title %>
 </div>
+
+<div class="text-sm question-footer footer-contenter">
+  <div class="mr-sm"><%= link_to fa_icon('pencil'), edit_difficulty_path(difficulty), title: 'Edit difficulty' %></div>
+  <div class="mr-sm"><%= link_to fa_icon('star'), difficulty_path(difficulty), title: 'Show this difficulty' %></div>
+  <div class="mr-sm"><%= button_to fa_icon('trash-o'), difficulty_path(difficulty), method: :delete, title: 'Delete difficulty'%></div>
+</div>
+

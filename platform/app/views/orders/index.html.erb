@@ -1,14 +1,17 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <p class="title-md mb"style="color: green"><%= notice %></p>
 
-<h1>Orders</h1>
+  <h1 class="title-lg mb">All orders</h1>
 
-<div id="orders">
-  <% @orders.each do |order| %>
-    <%= render order %>
-    <p>
-      <%= link_to "Show this order", order %>
-    </p>
+  <div id="orders">
+    <% @orders.each do |order| %>
+    <div class="mt-ls container">
+       <%= render order %>
+    </div>
   <% end %>
+
+  <div class="container mt-ls">
+    <%= link_to "New order", new_order_path, class: 'button button-main' %>
+  </div>
 </div>
 
-<%= link_to "New order", new_order_path %>

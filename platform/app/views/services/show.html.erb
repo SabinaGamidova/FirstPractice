@@ -1,10 +1,5 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @service %>
-
-<div>
-  <%= link_to "Edit this service", edit_service_path(@service) %> |
-  <%= link_to "Back to services", services_path %>
-
-  <%= button_to "Destroy this service", @service, method: :delete %>
+<div class="container">
+  <p class="title-md" style="color: green"><%= notice %></p>
+  <%= render @service %>
+  <p class="mt"><%= link_to "All services", services_path, class: 'button button-main' %></p>
 </div>

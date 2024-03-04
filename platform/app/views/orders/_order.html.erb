@@ -1,47 +1,15 @@
-<div id="<%= dom_id order %>">
-  <p>
-    <strong>Order:</strong>
-    <%= order.order_id %>
-  </p>
+<div class="mb-sm"> 
+  <%= "#{order.client} #{order.status} #{order.urgency}" %>
+</div>
 
-  <p>
-    <strong>Status:</strong>
-    <%= order.status %>
-  </p>
+<div class="text-sm question-footer">
+    <div class="text-grey"> 
+        <%= order.date_order %>
+    </div>
 
-  <p>
-    <strong>Client:</strong>
-    <%= order.client %>
-  </p>
-
-  <p>
-    <strong>Comment:</strong>
-    <%= order.comment %>
-  </p>
-
-  <p>
-    <strong>Employee:</strong>
-    <%= order.employee %>
-  </p>
-
-  <p>
-    <strong>Urgency:</strong>
-    <%= order.urgency %>
-  </p>
-
-  <p>
-    <strong>Date order:</strong>
-    <%= order.date_order %>
-  </p>
-
-  <p>
-    <strong>Service:</strong>
-    <%= order.service %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= order.price %>
-  </p>
-
+    <div> 
+        <%= link_to fa_icon('pencil'), edit_order_path(order), title: 'Edit order' %>
+        <%= link_to fa_icon('star'), order_path(order), title: 'Show this order' %>
+        <%= button_to fa_icon('trash-o'), order_path(order), method: :delete, title: 'Delete order'%>
+    </div>
 </div>

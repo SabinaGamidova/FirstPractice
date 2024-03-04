@@ -1,12 +1,10 @@
-<div id="<%= dom_id comment %>">
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.comment_id %>
-  </p>
-
-  <p>
-    <strong>Text:</strong>
-    <%= comment.text %>
-  </p>
-
+<div class="mb-sm"> 
+  <%= comment.text %>
 </div>
+
+<div class="text-sm question-footer footer-contenter">
+  <div class="mr-sm"><%= link_to fa_icon('pencil'), edit_comment_path(comment), title: 'Edit comment' %></div>
+  <div class="mr-sm"><%= link_to fa_icon('star'), comment_path(comment), title: 'Show this comment' %></div>
+  <div class="mr-sm"><%= button_to fa_icon('trash-o'), comment_path(comment), method: :delete, title: 'Delete comment'%></div>
+</div>
+

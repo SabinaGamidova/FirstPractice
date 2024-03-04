@@ -1,14 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <p class="title-md mb"style="color: green"><%= notice %></p>
 
-<h1>Species</h1>
+  <h1 class="title-lg mb">All species</h1>
 
-<div id="species">
-  <% @species.each do |species| %>
-    <%= render species %>
-    <p>
-      <%= link_to "Show this species", species %>
-    </p>
+  <div id="species">
+    <% @species.each do |species| %>
+    <div class="mt-ls container">
+       <%= render species %>
+    </div>
   <% end %>
-</div>
 
-<%= link_to "New species", new_species_path %>
+  <div class="container mt-ls">
+    <%= link_to "New species", new_species_path, class: 'button button-main' %>
+  </div>
+</div>

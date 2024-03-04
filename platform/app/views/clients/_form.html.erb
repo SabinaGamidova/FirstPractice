@@ -1,62 +1,28 @@
-<%= form_with(model: client) do |form| %>
-  <% if client.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
+<%= form_with model: client do |form| %>
 
-      <ul>
-        <% client.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <p><%= form.label :name, 'Your name' %></p>
+  <p><%= form.text_field :name, class: 'form-text-field' %></p>
 
-  <div>
-    <%= form.label :client_id, style: "display: block" %>
-    <%= form.number_field :client_id %>
-  </div>
+  <p  class="mt"><%= form.label :surname, 'Your surname' %></p>
+  <p><%= form.text_field :surname, class: 'form-text-field' %></p>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+  <p  class="mt"><%= form.label :patronymic, 'Your patronymic' %></p>
+  <p><%= form.text_field :patronymic, class: 'form-text-field' %></p>
 
-  <div>
-    <%= form.label :surname, style: "display: block" %>
-    <%= form.text_field :surname %>
-  </div>
+  <p class="mt"><%= form.label :address %></p>
+  <p><%= form.text_field :address, class: 'form-text-field' %></p>
 
-  <div>
-    <%= form.label :patronymic, style: "display: block" %>
-    <%= form.text_field :patronymic %>
-  </div>
+  <p class="mt"><%= form.label :email %></p>
+  <p><%= form.text_field :email, class: 'form-text-field' %></p>
 
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
-  </div>
+  <p class="mt"><%= form.label :phone %></p>
+  <p><%= form.text_field :phone, class: 'form-text-field' %></p>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
-  </div>
+  <p class="mt"><%= form.label :login %></p>
+  <p><%= form.text_field :login, class: 'form-text-field' %></p>
 
-  <div>
-    <%= form.label :address, style: "display: block" %>
-    <%= form.number_field :address %>
-  </div>
+  <p class="mt"><%= form.label :password %></p>
+  <p><%= form.password_field :password, class: 'form-text-field' %></p>
 
-  <div>
-    <%= form.label :login, style: "display: block" %>
-    <%= form.text_field :login %>
-  </div>
-
-  <div>
-    <%= form.label :password, style: "display: block" %>
-    <%= form.text_field :password %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+  <p class="mt"><%= form.submit "Save", class: 'button button-main' %></p> 
+<% end %> 

@@ -1,10 +1,5 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @order %>
-
-<div>
-  <%= link_to "Edit this order", edit_order_path(@order) %> |
-  <%= link_to "Back to orders", orders_path %>
-
-  <%= button_to "Destroy this order", @order, method: :delete %>
+<div class="container">
+  <p class="title-md" style="color: green"><%= notice %></p>
+  <%= render @order %>
+  <p class="mt"><%= link_to "All orders", orders_path, class: 'button button-main' %></p>
 </div>

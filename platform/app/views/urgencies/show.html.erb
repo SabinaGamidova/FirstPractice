@@ -1,10 +1,5 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @urgency %>
-
-<div>
-  <%= link_to "Edit this urgency", edit_urgency_path(@urgency) %> |
-  <%= link_to "Back to urgencies", urgencies_path %>
-
-  <%= button_to "Destroy this urgency", @urgency, method: :delete %>
+<div class="container">
+  <p class="title-md" style="color: green"><%= notice %></p>
+  <%= render @urgency %>
+  <p class="mt"><%= link_to "All urgencies", urgencies_path, class: 'button button-main' %></p>
 </div>

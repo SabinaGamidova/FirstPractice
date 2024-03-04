@@ -1,17 +1,11 @@
-<div id="<%= dom_id species %>">
-  <p>
-    <strong>Species:</strong>
-    <%= species.species_id %>
-  </p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= species.title %>
-  </p>
-
-  <p>
-    <strong>Type:</strong>
-    <%= species.type %>
-  </p>
-
+<div class="mb-sm"> 
+  <%= species.title %>
 </div>
+
+<div class="text-sm question-footer footer-contenter">
+    <div class="mr-sm"><%= link_to fa_icon('pencil'), edit_service_path(service), title: 'Edit service' %></div>
+    <div class="mr-sm"><%= link_to fa_icon('star'), service_path(service), title: 'Show this service' %></div>
+    <div class="mr-sm"><%= button_to fa_icon('trash-o'), service_path(service), method: :delete, title: 'Delete service'%></div>
+</div>
+
+

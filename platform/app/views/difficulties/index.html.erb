@@ -1,14 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <p class="title-md mb"style="color: green"><%= notice %></p>
 
-<h1>Difficulties</h1>
+  <h1 class="title-lg mb">All difficulties</h1>
 
-<div id="difficulties">
-  <% @difficulties.each do |difficulty| %>
-    <%= render difficulty %>
-    <p>
-      <%= link_to "Show this difficulty", difficulty %>
-    </p>
+  <div id="difficulties">
+    <% @difficulties.each do |difficulty| %>
+    <div class="mt-ls container">
+       <%= render difficulty %>
+    </div>
   <% end %>
-</div>
 
-<%= link_to "New difficulty", new_difficulty_path %>
+  <div class="container mt-ls">
+    <%= link_to "New difficulty", new_difficulty_path, class: 'button button-main' %>
+  </div>
+</div>

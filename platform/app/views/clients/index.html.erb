@@ -1,14 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <p class="title-md"style="color: green"><%= notice %></p>
 
-<h1>Clients</h1>
+  <h1 class="title-lg mb">All clients</h1>
 
-<div id="clients">
-  <% @clients.each do |client| %>
-    <%= render client %>
-    <p>
-      <%= link_to "Show this client", client %>
-    </p>
+  <div id="clients">
+    <% @clients.each do |client| %>
+    <div class="mt-ls container">
+       <%= render client %>
+    </div>
   <% end %>
-</div>
 
-<%= link_to "New client", new_client_path %>
+  <div class="container mt-ls">
+    <%= link_to "New client", new_client_path, class: 'button button-main' %>
+  </div>
+</div>

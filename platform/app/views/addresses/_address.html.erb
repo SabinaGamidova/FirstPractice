@@ -1,22 +1,12 @@
-<div id="<%= dom_id address %>">
-  <p>
-    <strong>Address:</strong>
-    <%= address.address_id %>
-  </p>
-
-  <p>
-    <strong>City:</strong>
-    <%= address.city %>
-  </p>
-
-  <p>
-    <strong>Street:</strong>
-    <%= address.street %>
-  </p>
-
-  <p>
-    <strong>Build:</strong>
-    <%= address.build %>
-  </p>
-
+<div class="mb-sm"> 
+  <%= "#{address.street} #{address.build} #{address.city}" %>
 </div>
+
+<div class="text-sm question-footer footer-contenter">
+    <div> 
+      <div class="mr-sm"><%= link_to fa_icon('pencil'), edit_address_path(address), title: 'Edit address' %></div>
+      <div class="mr-sm"><%= link_to fa_icon('star'), address_path(address), title: 'Show this address' %></div>
+      <div class="mr-sm"><%= button_to fa_icon('trash-o'), address_path(address), method: :delete, title: 'Delete address'%></div>
+    </div>
+</div>
+
