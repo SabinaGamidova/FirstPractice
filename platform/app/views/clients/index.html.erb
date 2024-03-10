@@ -1,7 +1,7 @@
 <div class="container">
   <p class="title-md"style="color: green"><%= notice %></p>
 
-  <h1 class="title-lg mb">All clients</h1>
+  <h1 class="title-lg mb">Усі клієнти</h1>
 
   <div id="clients">
     <% @clients.each do |client| %>
@@ -11,6 +11,6 @@
   <% end %>
 
   <div class="container mt-ls">
-    <%= link_to "New client", new_client_path, class: 'button button-main' %>
+    <%= link_to "Новий клієнт", new_client_path, class: 'button button-main' %>
   </div>
 </div>

@@ -1,28 +1,18 @@
 <%= form_with model: client do |form| %>
 
-  <p><%= form.label :name, 'Your name' %></p>
-  <p><%= form.text_field :name, class: 'form-text-field' %></p>
-
-  <p  class="mt"><%= form.label :surname, 'Your surname' %></p>
+  <p><%= form.label :surname, 'Уведіть прізвище' %></p>
   <p><%= form.text_field :surname, class: 'form-text-field' %></p>
 
-  <p  class="mt"><%= form.label :patronymic, 'Your patronymic' %></p>
+  <p  class="mt"><%= form.label :name, 'Уведіть ім\'я' %></p>
+  <p><%= form.text_field :name, class: 'form-text-field' %></p>
+
+  <p  class="mt"><%= form.label :patronymic, 'Уведіть по-батькові' %></p>
   <p><%= form.text_field :patronymic, class: 'form-text-field' %></p>
 
-  <p class="mt"><%= form.label :address %></p>
+  <p class="mt"><%= form.label :address, 'Уведіть адресу' %></p>
   <p><%= form.text_field :address, class: 'form-text-field' %></p>
 
-  <p class="mt"><%= form.label :email %></p>
-  <p><%= form.text_field :email, class: 'form-text-field' %></p>
-
-  <p class="mt"><%= form.label :phone %></p>
+  <p class="mt"><%= form.label :phone, 'Уведіть телефон'  %></p>
   <p><%= form.text_field :phone, class: 'form-text-field' %></p>
 
-  <p class="mt"><%= form.label :login %></p>
-  <p><%= form.text_field :login, class: 'form-text-field' %></p>
-
-  <p class="mt"><%= form.label :password %></p>
-  <p><%= form.password_field :password, class: 'form-text-field' %></p>
-
-  <p class="mt"><%= form.submit "Save", class: 'button button-main' %></p> 
-<% end %> 
+  <% end %> 

@@ -4,6 +4,10 @@ ruby "3.2.2"
 
 gem 'font-awesome-rails'
 
+gem 'devise', '~> 4.9', '>= 4.9.3'
+
+gem 'inline_svg'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 

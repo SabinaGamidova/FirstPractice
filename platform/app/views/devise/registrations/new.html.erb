@@ -1,0 +1,48 @@
+<div class="container">
+  <h2 class="title-lg mb">Реєстрація</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <p><%= f.label :surname, 'Уведіть прізвище' %></p>
+    <p><%= f.text_field :surname, autofocus: true, class: 'form-text-field' %></p>
+  
+    <p  class="mt"><%= f.label :name, 'Уведіть ім\'я' %></p>
+    <p><%= f.text_field :name, class: 'form-text-field' %></p>
+  
+    <p  class="mt"><%= f.label :patronymic, 'Уведіть по-батькові' %></p>
+    <p><%= f.text_field :patronymic, class: 'form-text-field' %></p>
+
+    <p class="mt"><%= f.label :phone, 'Уведіть телефон'  %></p>
+    <p><%= f.text_field :phone, class: 'form-text-field' %></p>
+
+    <p class="mt"><%= f.label :address, 'Уведіть адресу'  %></p>
+    <p><%= f.text_field :address, class: 'form-text-field' %></p>
+
+    <div class="field mt">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autocomplete: "email", class: 'form-text-field' %>
+    </div>
+
+    <% if @minimum_password_length %>
+       <% min_password_length = @minimum_password_length %>
+    <% end %>
+
+    <div class="field mt">
+      <%= f.label :password do %>
+        Уведіть пароль <%= content_tag(:em, "(#{@minimum_password_length} символів мінімум") %>)
+      <% end %>
+      <p><%= f.password_field :password, autocomplete: "new-password", class: 'form-text-field' %></p>
+     </div>
+
+    <div class="field mt">
+      <%= f.label :password_confirmation, 'Підтвердження пароля' %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-text-field' %>
+    </div>
+
+    <div class="actions mt">
+      <%= f.submit "Зареєструватися", class: 'button button-main' %>
+    </div>
+  <% end %>
+
+</div>

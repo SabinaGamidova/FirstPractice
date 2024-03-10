@@ -13,13 +13,14 @@ body {
 .container {
     background: #fff;
     flex: 1 1 auto;
-    max-width: 700px;
-    margin: 30px auto;
+    max-width: 1199px;
+    margin: 130px auto 30px; 
     padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative; /* Добавляем это свойство */
+    position: relative;
+    z-index: 0;
 }
 
 .container, .navbar {
@@ -28,14 +29,32 @@ body {
 
 .navbar {
     background-color: #370617;
-    color: white;
+    color: white;   
+    flex: 1 1 auto;
     display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    /* position: fixed; */
+    top: 6%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: calc(100% - 60px);
+    height: 25px;
+    z-index: 1000; 
 }
-
 
 .navbar a {
     color: white;
     text-decoration: none;
 } 
+
+.platform-logo {
+    display: block;
+    margin: 0 auto;
+    fill: #3498db;
+    width: 200px; 
+    height: auto;
+}

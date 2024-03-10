@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Platform</title>
+    <title>Bdzhilka.ua - онлайн платформа для надання послуг</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= favicon_link_tag asset_path('beefav.ico') %>
   </head>
 
   <body>
-  <div class="wrapper">
-  </div>
+    <div class="wrapper">
+      <div class="navbar">
+
+         <div class="title-sm">
+            <%= inline_svg_tag "logo.svg", class: 'platform-logo' %>
+         </div>
+
+        <div>
+          <% if client_signed_in? %>
+            <%= content_tag 'span', "@#{current_client.name}", class: 'mr-sm' %>
+            <%= button_to 'Вийти', destroy_client_session_path, method: :delete, class: 'button button-yellow' %>
+          <% else %>
+            <%= link_to 'Реєстрація', new_client_registration_path, class: 'button button-yellow mr-sm' %>
+            <%= link_to 'Вхід', new_client_session_path, class: 'button button-yellow' %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>

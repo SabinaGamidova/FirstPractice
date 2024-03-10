@@ -1,6 +1,5 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: %i[ show edit update destroy ]
-
   # GET /clients or /clients.json
   def index
     @clients = Client.all
@@ -32,7 +31,7 @@ class ClientsController < ApplicationController
         format.json { render json: @client.errors, status: :unprocessable_entity }
       end
     end
-  end
+   end
 
   # PATCH/PUT /clients/1 or /clients/1.json
   def update
