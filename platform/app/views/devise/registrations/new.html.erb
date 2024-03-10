@@ -6,7 +6,7 @@
 
     <div class="field mt">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autocomplete: "email", class: 'form-text-field' %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-text-field' %>
     </div>
 
     <% if @minimum_password_length %>
