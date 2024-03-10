@@ -20,7 +20,7 @@
 
         <div>
           <% if client_signed_in? %>
-            <%= content_tag 'span', "@#{current_client.name}", class: 'mr-sm' %>
+            <%= content_tag 'span', "#{current_client.email}", class: 'mr-sm' %>
             <%= button_to 'Вийти', destroy_client_session_path, method: :delete, class: 'button button-yellow' %>
           <% else %>
             <%= link_to 'Реєстрація', new_client_registration_path, class: 'button button-yellow mr-sm' %>
