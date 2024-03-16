@@ -15,6 +15,7 @@ ul{
     font-family: "JetBrains Mono", monospace;
     width: 1200px;
     margin-bottom: -30px;
+	margin-left: -30px;
 }
 
 .footer-col{

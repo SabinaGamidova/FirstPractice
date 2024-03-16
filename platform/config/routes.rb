@@ -2,9 +2,7 @@ Rails.application.routes.draw do
   root to: 'index#home'
   devise_for :clients, controllers: { sessions: "clients/sessions", registrations: "clients/registrations", passwords: "clients/passwords" }
   resources :difficulties
-  resources :types
-  resources :species
-  resources :services
+  resources :services, only: [:index]
   resources :urgencies
   resources :comments
   resources :statuses

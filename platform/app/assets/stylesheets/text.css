@@ -7,6 +7,13 @@ a, button {
     color: DC2F02;
 }
 
+h1 {
+    font-size: 32px; 
+    font-weight: bold; 
+    color: #370617;
+    margin-bottom: 50px; 
+  }
+
 .title-lg {
     font-size: 175%;
 
