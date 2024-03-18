@@ -2,7 +2,7 @@
   <%= specialization.title %>
 </div>
 
-<div class="text-sm question-footer footer-contenter">
+<div class="text-sm footer-contenter">
   <div class="mr-sm"><%= link_to fa_icon('pencil'), edit_specialization_path(specialization), title: 'Edit specialization' %></div>
   <div class="mr-sm"><%= link_to fa_icon('star'), specialization_path(specialization), title: 'Show this specialization' %></div>
   <div class="mr-sm"><%= button_to fa_icon('trash-o'), specialization_path(specialization), method: :delete, title: 'Delete specialization'%></div>

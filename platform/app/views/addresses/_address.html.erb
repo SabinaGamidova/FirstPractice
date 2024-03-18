@@ -2,7 +2,7 @@
   <%= "#{address.street} #{address.build} #{address.city}" %>
 </div>
 
-<div class="text-sm question-footer footer-contenter">
+<div class="text-sm entity-footer">
     <div> 
       <div class="mr-sm"><%= link_to fa_icon('pencil'), edit_address_path(address), title: 'Edit address' %></div>
       <div class="mr-sm"><%= link_to fa_icon('star'), address_path(address), title: 'Show this address' %></div>

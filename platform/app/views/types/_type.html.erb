@@ -1,9 +1,0 @@
-<div class="mb-sm"> 
-  <%= type.title %>
-</div>
-
-<div class="text-sm question-footer footer-contenter">
-  <div class="mr-sm"><%= link_to fa_icon('pencil'), edit_type_path(type), title: 'Edit type' %></div>
-  <div class="mr-sm"><%= link_to fa_icon('star'), type_path(type), title: 'Show this type' %></div>
-  <div class="mr-sm"><%= button_to fa_icon('trash-o'), type_path(type), method: :delete, title: 'Delete type'%></div>
-</div>

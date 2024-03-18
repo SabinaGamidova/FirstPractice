@@ -11,7 +11,9 @@
   *
   *= require message
   *
-  *= require question
+  *= require entity
   *
   *= require footer
+  *
+  *= require list
  */

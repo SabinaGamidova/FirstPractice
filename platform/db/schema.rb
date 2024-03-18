@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_09_220805) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_16_141758) do
   create_table "addresses", force: :cascade do |t|
     t.integer "address_id"
     t.string "city"
@@ -18,8 +18,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_09_220805) do
     t.string "build"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "client_id", null: false
-    t.index ["client_id"], name: "index_addresses_on_client_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -94,10 +92,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_09_220805) do
 
   create_table "services", force: :cascade do |t|
     t.integer "service_id"
-    t.integer "species"
     t.integer "difficulty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
+    t.string "service_type"
   end
 
   create_table "specializations", force: :cascade do |t|
@@ -107,23 +106,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_09_220805) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "species", force: :cascade do |t|
-    t.integer "species_id"
-    t.string "title"
-    t.integer "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "statuses", force: :cascade do |t|
     t.integer "status_id"
-    t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "types", force: :cascade do |t|
-    t.integer "type_id"
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -136,5 +120,4 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_09_220805) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "addresses", "clients"
 end

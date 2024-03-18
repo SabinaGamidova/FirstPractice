@@ -2,7 +2,7 @@
   <%= position.title %>
 </div>
 
-<div class="text-sm question-footer footer-contenter">
+<div class="text-sm footer-contenter">
   <div class="mr-sm"><%= link_to fa_icon('pencil'), edit_position_path(position), title: 'Edit position' %></div>
   <div class="mr-sm"><%= link_to fa_icon('star'), position_path(position), title: 'Show this position' %></div>
   <div class="mr-sm"><%= button_to fa_icon('trash-o'), position_path(position), method: :delete, title: 'Delete position'%></div>

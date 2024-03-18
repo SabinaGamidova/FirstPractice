@@ -2,7 +2,7 @@
   <%= comment.text %>
 </div>
 
-<div class="text-sm question-footer footer-contenter">
+<div class="text-sm entity-footer footer-contenter">
   <div class="mr-sm"><%= link_to fa_icon('pencil'), edit_comment_path(comment), title: 'Edit comment' %></div>
   <div class="mr-sm"><%= link_to fa_icon('star'), comment_path(comment), title: 'Show this comment' %></div>
   <div class="mr-sm"><%= button_to fa_icon('trash-o'), comment_path(comment), method: :delete, title: 'Delete comment'%></div>

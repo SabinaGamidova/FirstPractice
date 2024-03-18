@@ -2,7 +2,7 @@
   <%= urgency.title %>
 </div>
 
-<div class="text-sm question-footer footer-contenter">
+<div class="text-sm footer-contenter">
   <div class="mr-sm"><%= link_to fa_icon('pencil'), edit_urgency_path(urgency), title: 'Edit urgency' %></div>
   <div class="mr-sm"><%= link_to fa_icon('star'), urgency_path(urgency), title: 'Show this urgency' %></div>
   <div class="mr-sm"><%= button_to fa_icon('trash-o'), urgency_path(urgency), method: :delete, title: 'Delete urgency'%></div>
