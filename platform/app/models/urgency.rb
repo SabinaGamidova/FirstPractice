@@ -1,2 +1,0 @@
-class Urgency < ApplicationRecord
-end
