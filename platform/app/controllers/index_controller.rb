@@ -7,6 +7,9 @@ class IndexController < ApplicationController
         @services_by_type = group_services_by_type(@services)
     end
 
+    def celendar
+    end
+
     private  
     def group_services_by_type(services)
         services_by_type = {}

@@ -1,7 +1,8 @@
 class EmployeeProfile < ApplicationRecord
-  belongs_to :employee
+  belongs_to :employee, dependent: :destroy
   belongs_to :specialization
   has_many :services, dependent: :destroy
+  has_many :orders, dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true

@@ -125,3 +125,19 @@ body {
         border: 1px solid #ccc;  
     }
 }
+
+.form-wrapper {
+    max-width: 400px;
+    margin: 0 auto; 
+    text-align: center; 
+}
+
+.label-wrapper {
+    /* max-width: 400px; */
+    margin: 0 auto; 
+    text-align: left; 
+}
+
+/* .form-wrapper select {
+    width: 100%;
+} */

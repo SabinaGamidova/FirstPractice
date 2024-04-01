@@ -30,5 +30,8 @@ Rails.application.routes.draw do
   resources :addresses
 
   get 'search', to: "services#search"
+
+  get 'calendar', to: "client_profiles#calendar", as: 'calendar'
+
   get "up" => "rails/health#show", as: :rails_health_check
 end

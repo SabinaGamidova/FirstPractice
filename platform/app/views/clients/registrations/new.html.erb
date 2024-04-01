@@ -3,9 +3,9 @@
   
   <% resource.build_client_profile if resource.client_profile.nil? %>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-
     <%= render "devise/shared/error_messages", resource: resource %>
   
+    <div class="form-wrapper">
     <%= f.fields_for :client_profile do |ui| %>
       <div class="field mt">
         <%= ui.label :first_name %><br />
@@ -19,7 +19,7 @@
   
       <div class="field mt">
         <%= ui.label :phone %><br />
-        <%= ui.text_field :phone, class: 'form-text-field' %>
+        <%= ui.text_field :phone, class: 'form-text-field', pattern: "[0-9]{10}", title: "Please enter 10 digits", onkeypress: "return /[0-9]/i.test(event.key)", maxlength: "10" %>
       </div>
     <% end %>
 
@@ -49,5 +49,5 @@
     </div>
     <%= render "clients/shared/links" %>
     <% end %>
+  </div>
 </div>
-

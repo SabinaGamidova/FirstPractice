@@ -13,6 +13,13 @@ class ClientProfilesController < ApplicationController
     #@client_profile.build_client unless @client_profile.client
   end
 
+  def calendar
+    current_client_id = params[:current_client_id]
+    @orders = Order.where(client_profile_id: current_client_id)
+    @orders_by_date = @orders.group_by { |order| order.date_order.to_date }
+  end
+
+
   # POST /client_profiles or /client_profiles.json
   def create
     @client_profile = ClientProfile.new(client_profile_params)

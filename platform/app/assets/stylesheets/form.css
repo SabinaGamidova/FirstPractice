@@ -1,8 +1,12 @@
 .form-text-area,
 .form-text-field {
-    border: 1px solid #d0d0d0;
+    /* border: 1px solid #d0d0d0;
     padding: 7.5px 115px;
+    padding-left: 10px; */
+    border: 1px solid #d0d0d0;
+    padding: 7.5px 10px;
     padding-left: 10px;
+    width: 280px;
 }
 
 .form-text-area:focus,

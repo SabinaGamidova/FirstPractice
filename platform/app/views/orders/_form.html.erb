@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+<div class="form-wrapper">
   <% if params[:employee_id].present? %>
     <% employee = EmployeeProfile.find(params[:employee_id]) %>
     <div class="field mt">
@@ -25,73 +26,29 @@
 
   <div class="field mt">
     <%= form.label :urgency_id, style: "display: block" %>
-    <%= form.select :urgency_id, options_for_select(Urgency.all.map { |d| [d.title, d.id] }, prompt: 'Select urgency'), {}, class: 'form-text-field' %>
+    <%= form.select :urgency_id, options_for_select(Urgency.all.map { |d| [d.title, d.id] }, prompt: 'Select urgency'), {}, class: 'form-text-field', style: "width: 300px;" %>
   </div>
 
   <div class="field mt">
     <%= form.label :date_order, style: "display: block" %>
-    <%= form.datetime_field :date_order, class: 'form-text-field' %>
-  </div>
-
-  <div class="field mt">
-    <%= form.label :service_type, style: "display: block" %>
-    <%= form.select :service_type, options_for_select(Service.pluck(:service_type).uniq), { include_blank: "Select service type" }, { id: "service_type_select", class: "form-text-field"} %>
+    <%= form.date_field :date_order, class: 'form-text-field' %>
   </div>
 
   <div class="field mt">
     <%= form.label :service_id, style: "display: block" %>
-    <%= form.select :service_id, options_for_select([]), { include_blank: "Select service" }, { id: "service_select", class: "form-text-field" } %>
-  </div>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var serviceTypeSelect = document.getElementById("service_type_select");
-    var serviceSelect = document.getElementById("service_select");
-    var serviceIdField = document.getElementById("order_service_id"); 
-
-    var allServices = JSON.parse('<%= raw Service.all.to_json %>');
-
-    serviceTypeSelect.addEventListener("change", function() {
-      var serviceType = this.value;
-      var filteredServices = allServices.filter(function(service) {
-        return service.service_type === serviceType;
-      });
-
-      serviceSelect.innerHTML = "";
-
-      filteredServices.forEach(function(service) {
-        var option = new Option(service.title, service.id);
-        serviceSelect.appendChild(option);
-      });
-
-      serviceIdField.value = "";
-    });
-
-    serviceSelect.addEventListener("change", function() {
-      serviceIdField.value = this.value; 
-    });
-  });
-</script>
-
-  <div class="field mt">
-    <%= form.label :comment_id, style: "display: block" %>
-    <%= form.number_field :comment_id, class: 'form-text-field'  %>
-  </div>
-
-  <div class="field mt">
-    <%= form.label :status_id, style: "display: block" %>
-    <%= form.number_field :status_id, class: 'form-text-field'  %>
+    <%= form.select :service_id, options_for_select(Service.all.map { |d| [d.title, d.id] }, prompt: 'Select service'), {}, class: 'form-text-field', style: "width: 300px;" %>
   </div>
 
   <div class="field mt">
     <%= form.label :price, style: "display: block" %>
-    <%= form.number_field :price, class: 'form-text-field'  %>
+    <%= form.number_field :price, class: 'form-text-field', min: 1, max: 1000000 %>
   </div>
 
-  <%= form.hidden_field :client_profile_id, value:current_client.id %>
+  <%= form.hidden_field :client_profile_id, value: current_client.client_profile.id %>
   <%= form.hidden_field :employee_profile_id, value:params[:employee_id] %>
 
   <div class="field mt">
     <%= form.submit "Save", class: 'button button-main' %>
   </div>
 <% end %>
+</div>

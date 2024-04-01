@@ -1,9 +1,11 @@
 <div class="container">
   <h2 class="title-lg mb">Sign up</h2>
+
   <% resource.build_employee_profile if resource.employee_profile.nil? %>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= render "employees/shared/error_messages", resource: resource %>
 
+  <div class="form-wrapper">
     <%= f.fields_for :employee_profile do |ui| %>
       <div class="field mt">
         <%= ui.label :first_name %><br />
@@ -16,18 +18,13 @@
       </div>
 
       <div class="field mt">
-        <%= ui.label :phone %><br />
-        <%= ui.text_field :phone, class: 'form-text-field' %>
-      </div>
-
-      <div class="field mt">
-        <%= ui.label :date_registration %><br />
-        <%= ui.datetime_local_field :date_registration, class: 'form-text-field' %>
+      <%= ui.label :phone %><br />
+      <%= ui.text_field :phone, class: 'form-text-field', pattern: "[0-9]{10}", title: "Please enter 10 digits", onkeypress: "return /[0-9]/i.test(event.key)", maxlength: "10" %>
       </div>
 
       <div class="field mt">
         <%= ui.label :specialization %><br />
-        <%= ui.collection_select :specialization_id, Specialization.all, :id, :title, { prompt: 'Select specialization' }, class: 'form-text-field' %>
+        <%= ui.collection_select :specialization_id, Specialization.all, :id, :title, { prompt: 'Select specialization' }, class: 'form-text-field', style: "width: 300px;" %>
       </div>
     <% end %>
 
@@ -58,5 +55,5 @@
 
     <%= render "employees/shared/links" %>
     <% end %>
+  </div>
 </div>
-

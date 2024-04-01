@@ -3,7 +3,9 @@ class OrdersController < ApplicationController
 
   # GET /orders or /orders.json
   def index
-    @orders = Order.all
+    #@orders = Order.all
+    @client_profile_id = params[:client_profile_id]
+    @orders = Order.where(client_profile_id: @client_profile_id)
   end
 
   # GET /orders/1 or /orders/1.json
@@ -12,17 +14,17 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    if params[:employee_id].present?
-      @current_employee = EmployeeProfile.find(params[:employee_id])
-      @order = Order.new(employee_profile_id: @current_employee.id)
-      puts "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-      puts "Current employee ID: #{@current_employee.id}"
+    # if params[:employee_id].present?
+    #   @current_employee = EmployeeProfile.find(params[:employee_id])
+    #   @order = Order.new(employee_profile_id: @current_employee.id)
+    #   puts "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    #   puts "Current employee ID: #{@current_employee.id}"
 
-    else
+    # else
       @order = Order.new
-      puts "-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
-      puts "Order attributes: #{@order.attributes}"
-    end
+    #   puts "-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+    #   puts "Order attributes: #{@order.attributes}"
+    # end
   end
   
   # GET /orders/1/edit
@@ -30,20 +32,44 @@ class OrdersController < ApplicationController
   end
 
   # POST /orders or /orders.json
+  # def create
+  #   #@order = Order.new(order_params)
+
+  #   #@order.employee_profile_id = params[:employee_id] if params[:employee_id].present?
+  #   client_profile = current_client.client_profile || current_client.build_client_profile
+  #   @order = client_profile.orders.build(order_params)
+
+  #   respond_to do |format|
+  #     if @order.save
+  #       format.html { redirect_to order_url(@order), notice: "Order was successfully created." }
+  #       format.json { render :show, status: :created, location: @order }
+  #     else
+  #       puts @order.errors.inspect
+  #       format.html { render :new, status: :unprocessable_entity }
+  #       format.json { render json: @order.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
+
   def create
     @order = Order.new(order_params)
-    @order.employee_profile_id = params[:employee_id] if params[:employee_id].present?
 
     respond_to do |format|
       if @order.save
         format.html { redirect_to order_url(@order), notice: "Order was successfully created." }
         format.json { render :show, status: :created, location: @order }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html do
+          flash.now[:alert] = "Order could not be created."
+          render :new, locals: { order: @order, employee_id: params[:employee_id] }
+        end
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
   end
+  
+
 
   # PATCH/PUT /orders/1 or /orders/1.json
   def update

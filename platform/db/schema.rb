@@ -89,9 +89,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_24_124514) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "status_id", null: false
+    t.integer "status_id"
     t.integer "client_profile_id", null: false
-    t.integer "comment_id", null: false
+    t.integer "comment_id"
     t.integer "employee_profile_id", null: false
     t.integer "urgency_id", null: false
     t.datetime "date_order"

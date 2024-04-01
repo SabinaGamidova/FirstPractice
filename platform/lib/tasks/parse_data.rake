@@ -45,9 +45,9 @@ end
   namespace :add do
     desc "Add data to specialization"
     task :specialization_data => :environment do
-      Specialization.find_or_create_by(title: "test1")
-      Specialization.find_or_create_by(title: "test2")
-      Specialization.find_or_create_by(title: "test3")
+      Specialization.find_or_create_by(title: "Tutor")
+      Specialization.find_or_create_by(title: "Locksmith")
+      Specialization.find_or_create_by(title: "Cook")
     end
   end
 

@@ -3,10 +3,9 @@
   <p style="color: green"><%= notice %></p>
 
   <% @services.each_with_index do |service, index| %>
+    <div class="user-card mt-ls">
     <%= render service %>
-    <% unless index == @services.size - 1 %>
-      <div class="divider"></div>
-    <% end %>
+    </div>
   <% end %>
 
   <div class="field mt">
