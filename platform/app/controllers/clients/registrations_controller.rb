@@ -17,7 +17,7 @@ class Clients::RegistrationsController < Devise::RegistrationsController
     end
   
     devise_parameter_sanitizer.permit(:account_update) do |user_params|
-      user_params.permit(:email, :password, :password_confirmation, :current_password, client_profile_attributes: [:first_name, :last_name, :phone])
+      user_params.permit(:email, :password, :password_confirmation, :current_password, client_profile_attributes: [:id, :first_name, :last_name, :phone])
     end
   end
   

@@ -32,10 +32,14 @@
       <%= user_fields.text_field :email, class: 'form-text-field' %> 
     </div>
 
-    <div class="field mt">
-      <%= user_fields.label :password, style: "display: block" %>
-      <%= user_fields.password_field :password, class: 'form-text-field' %> 
-    </div>
+  <div class="field mt">
+    <%= user_fields.label :password %> <i>(leave blank if you don't<br>want to change it)</i><br />
+    <%= user_fields.password_field :password, autocomplete: "new-password", class: 'form-text-field'   %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
   <% end %>
 
   <div class="field mt">

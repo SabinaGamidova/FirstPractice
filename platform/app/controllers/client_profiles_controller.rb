@@ -16,7 +16,7 @@ class ClientProfilesController < ApplicationController
   def calendar
     current_client_id = params[:current_client_id]
     @orders = Order.where(client_profile_id: current_client_id)
-    @orders_by_date = @orders.group_by { |order| order.date_order.to_date }
+    render "orders/calendar"
   end
 
 
@@ -48,6 +48,7 @@ class ClientProfilesController < ApplicationController
     end
   end
 
+
     # DELETE /client_profiles/1 or /client_profiles/1.json
     def destroy
       @client_profile.destroy!
@@ -66,7 +67,15 @@ class ClientProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def client_profile_params
-      params.require(:client_profile).permit(:first_name, :last_name, :phone,  client_attributes: [:email, :password])
+      # params.require(:client_profile).permit(:first_name, :last_name, :phone,  client_attributes: [:id, :email, :password])
+      # params.require(:client_profile).permit(:first_name, :last_name, :phone,  client_attributes: [:id, :email])
+      if !params[:client_profile][:client_attributes][:password].blank? 
+        permitted_params = [:first_name, :last_name, :phone, client_attributes: [:id, :email, :password]] 
+      else 
+        permitted_params = [:first_name, :last_name, :phone, client_attributes: [:id, :email]]
+      end
+      params.require(:client_profile).permit(permitted_params)
     end
+    
 end
 

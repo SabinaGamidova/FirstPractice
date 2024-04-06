@@ -42,45 +42,141 @@ namespace :parse do
 end
 
 
+  # namespace :add do
+  #   desc "Add data to specialization"
+  #   task :specialization_data => :environment do
+  #     Specialization.find_or_create_by(title: "Tutor")
+  #     Specialization.find_or_create_by(title: "Locksmith")
+  #     Specialization.find_or_create_by(title: "Cook")
+  #   end
+  # end
+
   namespace :add do
     desc "Add data to specialization"
     task :specialization_data => :environment do
-      Specialization.find_or_create_by(title: "Tutor")
-      Specialization.find_or_create_by(title: "Locksmith")
-      Specialization.find_or_create_by(title: "Cook")
+      titles = ["Tutor", "Locksmith", "Cook"]
+      successes = 0
+  
+      titles.each do |title|
+        specialization = Specialization.find_or_create_by(title: title)
+        if specialization.persisted?
+          successes += 1
+        else
+          puts "Failed to add specialization: #{title}"
+        end
+      end
+  
+      if successes == titles.length
+        puts "Specializations added successfully."
+      else
+        puts "Some specializations failed to add."
+      end
     end
   end
+
+  
+  namespace :add do
+    desc "Add data to urgency"
+    task :urgency_data => :environment do
+      titles = ["Critical", "Urgent", "Normal", "Non-urgent"]
+      successes = 0
+  
+      titles.each do |title|
+        urgency = Urgency.create(title: title)
+        if urgency.persisted?
+          successes += 1
+        else
+          puts "Failed to add urgency: #{title}"
+        end
+      end
+  
+      if successes == titles.length
+        puts "Urgencies added successfully."
+      else
+        puts "Some urgencies failed to add."
+      end
+    end
+  end
+
+  
+  namespace :add do
+    desc "Add data to comment"
+    task :comment_data => :environment do
+      contents = ["Hello1", "Hello2", "Hello3", "Hello4"]
+      successes = 0
+  
+      contents.each do |content|
+        comment = Comment.create(content: content)
+        if comment.persisted?
+          successes += 1
+        else
+          puts "Failed to add comment: #{content}"
+        end
+      end
+  
+      if successes == contents.length
+        puts "Comments added successfully."
+      else
+        puts "Some comments failed to add."
+      end
+    end
+  end
+  
 
   namespace :add do
     desc "Add data to status"
     task :status_data => :environment do
-      Status.create(title: "Done")
-      Status.create(title: "In Progress")
-      Status.create(title: "Not Done")
+      titles = ["Done", "In Progress", "Not Done"]
+      successes = 0
+  
+      titles.each do |title|
+        status = Status.create(title: title)
+        if status.persisted?
+          successes += 1
+        else
+          puts "Failed to add status: #{title}"
+        end
+      end
+  
+      if successes == titles.length
+        puts "Statuses added successfully."
+      else
+        puts "Some statuses failed to add."
+      end
     end
   end
+  
+
+  # namespace :add do
+  #   desc "Add data to status"
+  #   task :status_data => :environment do
+  #     Status.create(title: "Done")
+  #     Status.create(title: "In Progress")
+  #     Status.create(title: "Not Done")
+  #   end
+  # end
 
 
-  namespace :add do
-    desc "Add data to urgency"
-    task :urgency_data => :environment do
-      Urgency.create(title: "Critical")
-      Urgency.create(title: "Urgent")
-      Urgency.create(title: "Normal")
-      Urgency.create(title: "Non-urgent")
-    end
-  end
+  # namespace :add do
+  #   desc "Add data to urgency"
+  #   task :urgency_data => :environment do
+  #     Urgency.create(title: "Critical")
+  #     Urgency.create(title: "Urgent")
+  #     Urgency.create(title: "Normal")
+  #     Urgency.create(title: "Non-urgent")
+  #   end
+  # end
 
 
-  namespace :add do
-    desc "Add data to comment"
-    task :comment_data => :environment do
-      Comment.create(content: "Hello1")
-      Comment.create(content: "Hello2")
-      Comment.create(content: "Hello3")
-      Comment.create(content: "Hello4")
-    end
-  end
+  # namespace :add do
+  #   desc "Add data to comment"
+  #   task :comment_data => :environment do
+  #     Comment.create(content: "Hello1")
+  #     Comment.create(content: "Hello2")
+  #     Comment.create(content: "Hello3")
+  #     Comment.create(content: "Hello4")
+  #   end
+  # end
   
   # namespace :db do
   #   desc "Clear the services table"

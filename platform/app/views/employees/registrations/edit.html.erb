@@ -22,13 +22,8 @@
     </div>
 
     <div class="field mt ml">
-      <%= ui.label :date_registration %><br />
-      <%= ui.datetime_local_field :date_registration, class: 'form-text-field' %>
-    </div>
-
-    <div class="field mt ml">
       <%= ui.label :specialization %><br />
-      <%= ui.collection_select :specialization_id, Specialization.all, :id, :title, { prompt: 'Select specialization' }, class: 'form-text-field' %>
+      <%= ui.collection_select :specialization_id, Specialization.all, :id, :title, { prompt: 'Select specialization' }, class: 'form-text-field', style: 'width: 300px;' %>
     </div>
   <% end %>
 
@@ -42,7 +37,7 @@
   <% end %>
 
   <div class="field mt ml">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <i>(leave blank if you don't want to <br>change it)</i><br />
     <%= f.password_field :password, autocomplete: "new-password", class: 'form-text-field' %>
     <% if @minimum_password_length %>
       <br />
@@ -56,7 +51,7 @@
   </div>
 
   <div class="field mt ml">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %> <i>(we need your current<br>password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-text-field' %>
   </div>
 

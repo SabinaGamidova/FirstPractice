@@ -20,6 +20,12 @@ class EmployeeProfilesController < ApplicationController
   def edit
   end
 
+  def calendar
+    current_employee_id = params[:current_employee_id]
+    @orders = Order.where(employee_profile_id: current_employee_id)
+    render "orders/calendar"
+  end
+
   # POST /employee_profiles or /employee_profiles.json
   def create
     @employee_profile = EmployeeProfile.new(employee_profile_params)

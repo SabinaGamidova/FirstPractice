@@ -1,5 +1,6 @@
 class ClientProfile < ApplicationRecord  
   belongs_to :client, dependent: :destroy
+  accepts_nested_attributes_for :client
 
   has_many :orders, dependent: :destroy
   has_many :client_likes, dependent: :destroy

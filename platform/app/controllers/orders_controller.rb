@@ -14,17 +14,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    # if params[:employee_id].present?
-    #   @current_employee = EmployeeProfile.find(params[:employee_id])
-    #   @order = Order.new(employee_profile_id: @current_employee.id)
-    #   puts "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-    #   puts "Current employee ID: #{@current_employee.id}"
-
-    # else
       @order = Order.new
-    #   puts "-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
-    #   puts "Order attributes: #{@order.attributes}"
-    # end
   end
   
   # GET /orders/1/edit
