@@ -1,0 +1,6 @@
+# lefthook.yml
+
+commit-msg:
+  commands:
+    lint-commit-msg:
+      run: ruby hooks/lint_commit_msg.rb
