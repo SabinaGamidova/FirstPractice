@@ -1,0 +1,18 @@
+#.rubocop.yml
+
+inherit_from:
+  - 'rubocop-performance.yml'
+  - 'rubocop-rails.yml'
+
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
