@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get '/services/by_type/:service_type/:rand', to: 'services#by_type', as: 'services_by_type'
 
-  root to: "index#home"
+  root to: 'index#home'
   resources :client_likes
   resources :orders
   resources :services
@@ -29,10 +29,10 @@ Rails.application.routes.draw do
   resources :difficulties
   resources :addresses
 
-  get 'search', to: "services#search"
+  get 'search', to: 'services#search'
 
-  get 'calendar', to: "client_profiles#calendar", as: 'calendar'
-  get 'employee_calendar', to: "employee_profiles#calendar", as: 'employee_calendar'
+  get 'calendar', to: 'client_profiles#calendar', as: 'calendar'
+  get 'employee_calendar', to: 'employee_profiles#calendar', as: 'employee_calendar'
 
-  get "up" => "rails/health#show", as: :rails_health_check
+  get 'up' => 'rails/health#show', as: :rails_health_check
 end

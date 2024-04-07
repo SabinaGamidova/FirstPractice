@@ -1,5 +1,5 @@
 class DifficultiesController < ApplicationController
-  before_action :set_difficulty, only: %i[ show edit update destroy ]
+  before_action :set_difficulty, only: %i[show edit update destroy]
 
   # GET /difficulties or /difficulties.json
   def index
@@ -7,8 +7,7 @@ class DifficultiesController < ApplicationController
   end
 
   # GET /difficulties/1 or /difficulties/1.json
-  def show
-  end
+  def show; end
 
   # GET /difficulties/new
   def new
@@ -16,8 +15,7 @@ class DifficultiesController < ApplicationController
   end
 
   # GET /difficulties/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /difficulties or /difficulties.json
   def create
@@ -25,7 +23,7 @@ class DifficultiesController < ApplicationController
 
     respond_to do |format|
       if @difficulty.save
-        format.html { redirect_to difficulty_url(@difficulty), notice: "Difficulty was successfully created." }
+        format.html { redirect_to difficulty_url(@difficulty), notice: 'Difficulty was successfully created.' }
         format.json { render :show, status: :created, location: @difficulty }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class DifficultiesController < ApplicationController
   def update
     respond_to do |format|
       if @difficulty.update(difficulty_params)
-        format.html { redirect_to difficulty_url(@difficulty), notice: "Difficulty was successfully updated." }
+        format.html { redirect_to difficulty_url(@difficulty), notice: 'Difficulty was successfully updated.' }
         format.json { render :show, status: :ok, location: @difficulty }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class DifficultiesController < ApplicationController
     @difficulty.destroy!
 
     respond_to do |format|
-      format.html { redirect_to difficulties_url, notice: "Difficulty was successfully destroyed." }
+      format.html { redirect_to difficulties_url, notice: 'Difficulty was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_difficulty
-      @difficulty = Difficulty.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def difficulty_params
-      params.require(:difficulty).permit(:title)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_difficulty
+    @difficulty = Difficulty.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def difficulty_params
+    params.require(:difficulty).permit(:title)
+  end
 end

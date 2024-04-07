@@ -1,5 +1,5 @@
 class UrgenciesController < ApplicationController
-  before_action :set_urgency, only: %i[ show edit update destroy ]
+  before_action :set_urgency, only: %i[show edit update destroy]
 
   # GET /urgencies or /urgencies.json
   def index
@@ -7,8 +7,7 @@ class UrgenciesController < ApplicationController
   end
 
   # GET /urgencies/1 or /urgencies/1.json
-  def show
-  end
+  def show; end
 
   # GET /urgencies/new
   def new
@@ -16,8 +15,7 @@ class UrgenciesController < ApplicationController
   end
 
   # GET /urgencies/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /urgencies or /urgencies.json
   def create
@@ -25,7 +23,7 @@ class UrgenciesController < ApplicationController
 
     respond_to do |format|
       if @urgency.save
-        format.html { redirect_to urgency_url(@urgency), notice: "Urgency was successfully created." }
+        format.html { redirect_to urgency_url(@urgency), notice: 'Urgency was successfully created.' }
         format.json { render :show, status: :created, location: @urgency }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class UrgenciesController < ApplicationController
   def update
     respond_to do |format|
       if @urgency.update(urgency_params)
-        format.html { redirect_to urgency_url(@urgency), notice: "Urgency was successfully updated." }
+        format.html { redirect_to urgency_url(@urgency), notice: 'Urgency was successfully updated.' }
         format.json { render :show, status: :ok, location: @urgency }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class UrgenciesController < ApplicationController
     @urgency.destroy!
 
     respond_to do |format|
-      format.html { redirect_to urgencies_url, notice: "Urgency was successfully destroyed." }
+      format.html { redirect_to urgencies_url, notice: 'Urgency was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_urgency
-      @urgency = Urgency.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def urgency_params
-      params.require(:urgency).permit(:title)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_urgency
+    @urgency = Urgency.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def urgency_params
+    params.require(:urgency).permit(:title)
+  end
 end

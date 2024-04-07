@@ -1,5 +1,14 @@
 # lefthook.yml
 
+pre-commit:
+  parallel: true
+  commands:
+    rubocop:
+      tags: backend style
+      glob: "*.rb"
+      exclude: "lint_commit_msg.rb|schema.rb"
+      run: rubocop {all_files}
+
 commit-msg:
   commands:
     lint-commit-msg:

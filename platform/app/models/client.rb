@@ -4,9 +4,9 @@ class Client < ApplicationRecord
 
   def with_client_profile
     build_client_profile if client_profile.nil?
-      self
+    self
   end
-  
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -1,4 +1,4 @@
-class ClientProfile < ApplicationRecord  
+class ClientProfile < ApplicationRecord
   belongs_to :client, dependent: :destroy
   accepts_nested_attributes_for :client
 
@@ -9,5 +9,4 @@ class ClientProfile < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :phone, presence: true
-
 end

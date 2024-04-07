@@ -1,41 +1,41 @@
-require "application_system_test_case"
+require 'application_system_test_case'
 
 class DifficultiesTest < ApplicationSystemTestCase
   setup do
     @difficulty = difficulties(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit difficulties_url
-    assert_selector "h1", text: "Difficulties"
+    assert_selector 'h1', text: 'Difficulties'
   end
 
-  test "should create difficulty" do
+  test 'should create difficulty' do
     visit difficulties_url
-    click_on "New difficulty"
+    click_on 'New difficulty'
 
-    fill_in "Title", with: @difficulty.title
-    click_on "Create Difficulty"
+    fill_in 'Title', with: @difficulty.title
+    click_on 'Create Difficulty'
 
-    assert_text "Difficulty was successfully created"
-    click_on "Back"
+    assert_text 'Difficulty was successfully created'
+    click_on 'Back'
   end
 
-  test "should update Difficulty" do
+  test 'should update Difficulty' do
     visit difficulty_url(@difficulty)
-    click_on "Edit this difficulty", match: :first
+    click_on 'Edit this difficulty', match: :first
 
-    fill_in "Title", with: @difficulty.title
-    click_on "Update Difficulty"
+    fill_in 'Title', with: @difficulty.title
+    click_on 'Update Difficulty'
 
-    assert_text "Difficulty was successfully updated"
-    click_on "Back"
+    assert_text 'Difficulty was successfully updated'
+    click_on 'Back'
   end
 
-  test "should destroy Difficulty" do
+  test 'should destroy Difficulty' do
     visit difficulty_url(@difficulty)
-    click_on "Destroy this difficulty", match: :first
+    click_on 'Destroy this difficulty', match: :first
 
-    assert_text "Difficulty was successfully destroyed"
+    assert_text 'Difficulty was successfully destroyed'
   end
 end

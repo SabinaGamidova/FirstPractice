@@ -1,1 +1,1 @@
-json.partial! "difficulties/difficulty", difficulty: @difficulty
+json.partial! 'difficulties/difficulty', difficulty: @difficulty

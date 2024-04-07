@@ -9,5 +9,4 @@ class EmployeeProfile < ApplicationRecord
   validates :phone, presence: true
   validates :date_registration, presence: true
   validates :specialization, presence: true
-
 end

@@ -1,21 +1,20 @@
 # frozen_string_literal: true
 
 class Clients::SessionsController < Devise::SessionsController
-
   def create
     client = Client.find_by(email: params[:client][:email])
 
     if client && client.valid_password?(params[:client][:password])
       sign_in(client)
-      redirect_to root_path 
+      redirect_to root_path
     else
       employee = Employee.find_by(email: params[:client][:email])
 
       if employee && employee.valid_password?(params[:client][:password])
         sign_in(employee)
-        redirect_to root_path 
+        redirect_to root_path
       else
-        flash[:alert] = "Invalid email or password"
+        flash[:alert] = 'Invalid email or password'
         redirect_to new_client_session_path
       end
     end

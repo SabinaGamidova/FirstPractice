@@ -6,6 +6,6 @@ class CreateClientLikes < ActiveRecord::Migration[7.1]
 
       t.timestamps
     end
-    add_index :client_likes, [:client_profile_id, :service_id], unique: true
+    add_index :client_likes, %i[client_profile_id service_id], unique: true
   end
 end

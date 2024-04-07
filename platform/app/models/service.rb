@@ -4,5 +4,5 @@ class Service < ApplicationRecord
 
   has_many :client_likes
   has_many :client_profiles, through: :client_likes
-  validates :title, uniqueness: { scope: :service_type, message: "Should be unique for each service type" }
+  validates :title, uniqueness: { scope: :service_type, message: 'Should be unique for each service type' }
 end

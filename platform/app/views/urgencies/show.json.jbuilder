@@ -1,1 +1,1 @@
-json.partial! "urgencies/urgency", urgency: @urgency
+json.partial! 'urgencies/urgency', urgency: @urgency
